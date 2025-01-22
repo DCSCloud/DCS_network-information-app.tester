@@ -1,14 +1,14 @@
 <?php
-include '../backend/server-info.php';  // Includi il file con la funzione getServerInfo
+include '../backend/server-info.php';  // backend
 
 $serverInfo = getServerInfo();
 
 $networkInfo = [
     'IP_address' => $_SERVER['REMOTE_ADDR'] ?? 'N/A',
     'Host_name' => gethostname(),
-    'Connection_type' => 'LAN', // Per esempio, puoi verificare tramite PHP se la connessione è LAN
+    'Connection_type' => 'LAN',
     'Local_IP' => getHostByName(gethostname()),
-    'Network_details' => shell_exec("ifconfig") // Usa `ifconfig` per ottenere dettagli della rete (funziona su sistemi Unix/Linux)
+    'Network_details' => shell_exec("ifconfig") // Usa `ifconfig` 
 ];
 ?>
 
@@ -18,12 +18,7 @@ $networkInfo = [
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Informazioni Sistema e Rete</title>
-    <!-- Includi il file CSS -->
-    <link rel="stylesheet" href="css/style.css">
     <style>
-        /* style.css */
-
-/* Reset base styles */
 
 * {
     margin: 0;
@@ -31,7 +26,6 @@ $networkInfo = [
     box-sizing: border-box;
 }
 
-/* Corpo della pagina */
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
@@ -40,7 +34,6 @@ body {
     padding: 20px;
 }
 
-/* Titolo principale */
 h1 {
     text-align: center;
     color: #333;
@@ -48,7 +41,6 @@ h1 {
     font-size: 2.5em;
 }
 
-/* Paragrafo descrittivo */
 p {
     font-size: 1.2em;
     margin-bottom: 20px;
@@ -56,7 +48,6 @@ p {
     color: #555;
 }
 
-/* Titoli delle sezioni */
 h2 {
     font-size: 1.8em;
     color: #444;
@@ -64,7 +55,6 @@ h2 {
     margin-bottom: 15px;
 }
 
-/* Blocco di codice */
 pre {
     background-color: #2e2e2e;
     color: #f5f5f5;
@@ -76,12 +66,10 @@ pre {
     word-wrap: break-word;
 }
 
-/* Margini tra le sezioni */
 section {
     margin-bottom: 30px;
 }
 
-/* Contenitore per l'intera pagina */
 .container {
     max-width: 1000px;
     margin: 0 auto;
@@ -91,7 +79,6 @@ section {
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Design responsive per dispositivi mobili */
 @media screen and (max-width: 768px) {
     body {
         padding: 10px;
